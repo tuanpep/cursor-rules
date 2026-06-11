@@ -1,0 +1,24 @@
+---
+description: Write code understandable in isolation with explicit dependencies
+globs: "**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+
+# Local Reasoning — understandable in isolation
+
+Write code a reader can understand without tracing the whole system.
+
+## Practices
+
+- **Precise names** — `validateEmailFormat` not `processData`
+- **Explicit dependencies** — pass values in; avoid hidden globals and magic imports
+- **Isolate side effects** — I/O, network, and mutation at boundaries; keep core logic pure where practical
+- **One job per function** — short because focused, not because of a line limit
+
+## Agent check
+
+Before finishing: can each changed function be understood without opening other files? If not, simplify or make coupling explicit.
+
+## When locality is hard
+
+Distributed state, concurrency, or perf-critical paths may resist locality — contain the non-local parts and document why.

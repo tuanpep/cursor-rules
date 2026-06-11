@@ -1,0 +1,11 @@
+---
+description: Understand and verify code; never ship unread agent output
+alwaysApply: true
+---
+
+# No vibe coding
+
+- Read code you change; be able to summarize each touched file in one sentence
+- Never commit code you couldn't debug without the agent
+- Don't paste errors back blindly — understand what changed and why
+- Prefer evidence (tests, linter, manual run) over "it looks fine"

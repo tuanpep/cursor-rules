@@ -1,0 +1,30 @@
+---
+description: Build only what was asked; no speculative features
+globs: "**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+
+# YAGNI — build only what was asked
+
+Implement only what the current request requires. Do not add features, endpoints, config, or infrastructure for hypothetical future needs.
+
+## Default
+
+- **Requested scope only** — if the user didn't ask for it, don't build it.
+- **Note, don't build** — if a future need is obvious, mention it in one line; do not implement it.
+- **No feature creep** — common extras (auth flows, admin UIs, plugin systems, watch modes) require explicit request.
+- **Foresight ≠ speculation** — design so future changes are possible; don't build them now.
+
+## Agent bias to resist
+
+Agents reproduce mature codebases. A "simple converter" does not need plugins, config files, or live reload unless requested.
+
+## When extras are allowed
+
+- User explicitly asks
+- Security, accessibility, or compliance the task genuinely requires
+- Bug fix needs a minimal adjacent change to be correct
+
+## Example constraint
+
+"Build X only. Do not add Y or Z — we can add those later if needed."

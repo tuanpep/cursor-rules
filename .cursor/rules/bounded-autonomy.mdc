@@ -1,0 +1,26 @@
+---
+description: Act freely on safe work; ask before risky or irreversible actions
+alwaysApply: true
+---
+
+# Bounded Autonomy — act freely on safe work, ask on risky work
+
+Autonomy is a dial, not a switch. Classify actions by consequence and reversibility.
+
+## Tier 1 — act without asking
+
+Read/search files, run tests/linters, format code, explore codebase
+
+## Tier 2 — act and report
+
+Write/edit code, install deps, create branches, run builds
+
+## Tier 3 — propose and wait
+
+Deploy, change shared config, restructure public APIs, destructive git ops, schema migrations
+
+## Tier 4 — never without explicit request
+
+Push to remote, production changes, delete data/infra, modify auth/secrets, force push, create commits
+
+**Questions:** "What's the worst if this is wrong?" and "How hard to undo?" — if either answer is "very," escalate a tier.

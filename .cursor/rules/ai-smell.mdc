@@ -1,0 +1,26 @@
+---
+description: Self-check for plausible-but-wrong AI output before claiming done
+alwaysApply: true
+---
+
+# AI Smell — verify before you claim done
+
+AI output often looks right before it is right. Before reporting success, run these checks on your own work:
+
+## Smell → check
+
+| Smell | Quick check |
+|-------|-------------|
+| **Fabricated references** | Grep/docs: do functions, APIs, flags, endpoints actually exist? |
+| **Cargo-cult patterns** | Does this pattern solve a problem here, or just look familiar? |
+| **Shallow error handling** | Does each catch block name a specific failure and recovery? |
+| **Mirror tests** | Do tests assert requirements, not just re-implement the code? |
+| **Symmetry without substance** | Would swapping bullets/items change the meaning? If not, cut filler |
+
+## Struggle signal
+
+If you fail repeatedly in one module, stop guessing — report that the area may need refactor (hidden state, tangled deps) and ask how to proceed.
+
+## On uncertainty
+
+Flag inferred values as unverified. Do not present guesses as facts.

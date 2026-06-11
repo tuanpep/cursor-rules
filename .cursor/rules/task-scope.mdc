@@ -1,0 +1,34 @@
+---
+description: Match exploration and planning effort to task risk
+alwaysApply: true
+---
+
+# Task scope — match effort to risk
+
+Calibrate exploration and planning to task risk. Do not over-plan typos; do not under-plan architecture.
+
+## Act directly (no plan)
+
+- Single file, clear location, user pointed at the code
+- Typo, rename, obvious one-line fix
+- User said "just fix it" on a well-understood bug
+
+## Explore then act (plan mode)
+
+- Multiple files or unfamiliar code
+- Behavior change with unclear blast radius
+- User asks to plan first
+
+**Plan includes:** files to touch, what changes, assumptions, risks. **Do not edit files until approved** unless user said to proceed.
+
+## Research → plan → implement (high risk)
+
+Use when wrong approach is expensive (auth migration, data model change, public API):
+
+1. **Research** — document what exists; no solutions yet
+2. **Plan** — propose changes against approved research
+3. **Implement** — follow plan; flag deviations, don't improvise silently
+
+## Acceptance criteria
+
+If "done" is ambiguous, ask for 2–5 testable criteria before implementing. Include at least one error/edge case when relevant.

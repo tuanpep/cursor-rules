@@ -1,0 +1,51 @@
+---
+description: Keep implementations simple; resist agent over-engineering
+globs: "**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+
+# KISS — simplest correct solution
+
+Solve today's problem with the fewest moving parts that are correct. Simple means unentangled, not familiar or clever.
+
+Agents default to enterprise patterns. Resist layer sprawl, speculative abstractions, and extra files unless the task requires them.
+
+## Default
+
+1. **Smallest working change** — fewest files and lines that solve the current request.
+2. **Direct over clever** — explicit logic beats dense one-liners or pattern stacks.
+3. **YAGNI** — no factories, flags, interfaces, or generic frameworks until a second real caller exists.
+4. **Duplication over wrong abstraction** — extract only when duplication hurts maintenance.
+5. **Match existing code** — reuse project patterns before introducing new ones.
+
+## Simplify when you see
+
+- Layers (service/repository/DTO/mapper) with no present-day variation
+- Helpers, hooks, or interfaces used once
+- Config/options for behavior that does not vary yet
+- Performance work without evidence
+- New files for logic that fits an existing module
+
+## Removal test
+
+Before shipping: remove any part — if today's required behavior still works, remove it.
+
+## Not an excuse to skip
+
+- Error handling, validation, or security the task requires
+- Edge cases that occur in production
+- Tests when requested or needed to lock real behavior
+
+## When complexity is allowed
+
+- User explicitly asks for architecture, refactor, or extensibility
+- Domain or scale genuinely needs it (state why in one line)
+- Second real caller justifies extraction
+
+```typescript
+// ❌ One screen, five layers
+const useEntityActions = <T>(config: EntityActionConfig<T>) => ...
+
+// ✅ Solve the screen first
+const handleSave = () => mutation.mutate(formValues)
+```

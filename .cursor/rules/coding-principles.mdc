@@ -1,0 +1,14 @@
+---
+description: Scope, conventions, comments, and tests when writing code
+globs: "**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+
+# Coding principles
+
+**When writing code:**
+
+1. **Minimize task scope** — change only what the request needs; no drive-by refactors.
+2. **Read before writing** — match naming, types, imports, and patterns in surrounding code.
+3. **Comments** — only for non-obvious business logic.
+4. **Tests** — add only when requested or when they cover meaningful behavior, not trivia.

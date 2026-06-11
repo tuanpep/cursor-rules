@@ -1,0 +1,35 @@
+---
+description: Prove changes work with tests, linters, or builds before claiming done
+alwaysApply: true
+---
+
+# Verification — prove it works, don't assume
+
+Never report a coding task complete without evidence. Plausible code is not correct code.
+
+## Required loop
+
+1. **Change** — make the smallest change that addresses the request
+2. **Verify** — run the fastest relevant check (linter, typecheck, test, build)
+3. **Inspect** — read failures; fix root cause, not symptoms
+4. **Repeat** until checks pass or you report a blocker
+
+## This project
+
+Prefer, in order: `nx lint website`, `nx typecheck website`, `nx test website`, `nx build website`.
+
+## Calibration
+
+- Small fix → targeted test/linter for affected files
+- Behavior change → run tests that cover the behavior
+- If no tests exist → run the app/command and describe what you observed
+
+## Do not trust
+
+- Self-generated tests as the only proof (they can mirror the same bugs)
+- "This should work" without running anything
+- Fixing tests to match wrong behavior without flagging the tradeoff
+
+## When blocked
+
+Say what you tried, what failed, and what you need — don't silently give up or claim success.
