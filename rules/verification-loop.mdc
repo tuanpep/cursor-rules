@@ -14,9 +14,9 @@ Never report a coding task complete without evidence. Plausible code is not corr
 3. **Inspect** — read failures; fix root cause, not symptoms
 4. **Repeat** until checks pass or you report a blocker
 
-## This project
+## Per project
 
-Prefer, in order: `nx lint website`, `nx typecheck website`, `nx test website`, `nx build website`.
+Use the repo's own scripts (`package.json`, `Makefile`, `pyproject.toml`, etc.). Prefer, in order: lint → typecheck → test → build.
 
 ## Calibration
 
