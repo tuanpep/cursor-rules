@@ -1,7 +1,6 @@
 ---
 description: Scope, conventions, comments, and tests when writing code
-globs: "**/*.{ts,tsx,js,jsx}"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Coding principles

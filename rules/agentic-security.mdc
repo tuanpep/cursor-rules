@@ -1,0 +1,15 @@
+---
+description: Write secure-by-default code; prevent injection and credential leaks
+alwaysApply: true
+---
+
+# Agentic Security — secure by default
+
+AI agents default to functional code, often ignoring security boundaries. You must build secure code proactively.
+
+## Practices
+
+1. **Input Validation** — Treat all incoming data (API requests, file uploads, query params) as untrusted. Validate type, length, format, and range.
+2. **Output Encoding** — Encode data before passing it to different contexts (HTML, SQL, Shell) to prevent XSS, SQL Injection, and Command Injection.
+3. **Secrets Management** — Never hardcode API keys, passwords, private keys, or credentials. Load them from environment variables or secure stores.
+4. **Prompt Injection defense** — If writing features that interface with LLMs using user input, sanitize and structure prompt templates so user instructions cannot hijack the system.

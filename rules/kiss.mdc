@@ -1,7 +1,6 @@
 ---
 description: Keep implementations simple; resist agent over-engineering
-globs: "**/*.{ts,tsx,js,jsx}"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # KISS — simplest correct solution
@@ -42,10 +41,15 @@ Before shipping: remove any part — if today's required behavior still works, r
 - Domain or scale genuinely needs it (state why in one line)
 - Second real caller justifies extraction
 
-```typescript
-// ❌ One screen, five layers
-const useEntityActions = <T>(config: EntityActionConfig<T>) => ...
+```pseudocode
+// ❌ Complex speculative abstraction
+class GenericDataFetcherBrokerFactory<T> {
+  private broker: ConnectionBroker;
+  public createFetcher(config: ConfigurationOptions<T>): DataFetcher<T> { ... }
+}
 
-// ✅ Solve the screen first
-const handleSave = () => mutation.mutate(formValues)
+// ✅ Simple, direct implementation
+function fetchItem(id) {
+  return database.query("SELECT * FROM items WHERE id = ?", id);
+}
 ```

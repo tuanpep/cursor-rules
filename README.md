@@ -35,12 +35,17 @@ cp rules/verification-loop.mdc /path/to/your-project/.cursor/rules/
 | [task-scope](rules/task-scope.mdc) | Always | Match planning effort to task risk |
 | [anti-vibe-coding](rules/anti-vibe-coding.mdc) | Always | Understand and verify code; never ship unread output |
 | [ai-smell](rules/ai-smell.mdc) | Always | Self-check for plausible-but-wrong AI output |
-| [coding-principles](rules/coding-principles.mdc) | On matching files | Scope, conventions, comments, tests |
-| [kiss](rules/kiss.mdc) | On matching files | Keep implementations simple |
-| [yagni](rules/yagni.mdc) | On matching files | Build only what was asked |
-| [local-reasoning](rules/local-reasoning.mdc) | On matching files | Write code understandable in isolation |
+| [context-management](rules/context-management.mdc) | Always | Optimize context window usage and prevent context rot |
+| [agentic-pr](rules/agentic-pr.mdc) | Always | Formulate atomic commits and summaries to prevent review fatigue |
+| [coding-principles](rules/coding-principles.mdc) | Always | Scope, conventions, comments, tests |
+| [kiss](rules/kiss.mdc) | Always | Keep implementations simple |
+| [yagni](rules/yagni.mdc) | Always | Build only what was asked |
+| [local-reasoning](rules/local-reasoning.mdc) | Always | Write code understandable in isolation |
+| [error-handling](rules/error-handling.mdc) | Always | Handle exceptions explicitly and fail fast and loud |
+| [evolutionary-change](rules/evolutionary-change.mdc) | Always | Refactor safely using Parallel Change |
+| [agentic-security](rules/agentic-security.mdc) | Always | Implement input validation, output encoding, and protect secrets |
 
-File-scoped rules auto-attach for `**/*.{ts,tsx,js,jsx}`.
+All rules apply globally across all programming languages and file extensions.
 
 ## Updating
 

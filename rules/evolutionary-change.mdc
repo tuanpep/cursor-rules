@@ -1,0 +1,17 @@
+---
+description: Refactor safely without breaking callers; use Parallel Change
+alwaysApply: true
+---
+
+# Evolutionary Change — refactor without breaking
+
+Avoid "big bang" updates to APIs, schemas, or databases that force all callers to update simultaneously or break backward compatibility.
+
+## Practices
+
+1. **Parallel Change (Expand and Contract)**:
+   - **Expand**: Add the new interface or column alongside the old one. Support both.
+   - **Migrate**: Update callers and data incrementally.
+   - **Contract**: Remove the old interface or column only after usage drops to zero.
+2. **No drive-by public API breaks** — If modifying a function signature used by multiple files, keep the old signature deprecated or verify and update all callers in the same sweep.
+3. **Audit databases** — Write database schema changes as non-breaking migrations (e.g. adding a nullable column instead of a required one with no default).

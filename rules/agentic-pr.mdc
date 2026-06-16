@@ -1,0 +1,17 @@
+---
+description: Write clear commits and walkthrough summaries for reviews
+alwaysApply: true
+---
+
+# Agentic PR — clear handoff and review
+
+When you finish a task, present the changes in a way that prevents Approval Fatigue and makes human verification simple.
+
+## Practices
+
+1. **Atomic Commits** — Group changes into small, logical commits (e.g., `feat: validate input`, `test: add edge cases`) rather than one massive commit.
+2. **Walkthrough Summary** — Provide a concise markdown report of what you did:
+   - **What changed**: Files modified and why.
+   - **How it was tested**: Automated test runs or manual logs.
+   - **Verification command**: The exact command the user can run to verify.
+3. **No magic fixes** — Explain any non-obvious fixes or workarounds. Don't hide hacks.

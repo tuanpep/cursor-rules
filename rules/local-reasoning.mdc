@@ -1,7 +1,6 @@
 ---
 description: Write code understandable in isolation with explicit dependencies
-globs: "**/*.{ts,tsx,js,jsx}"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Local Reasoning — understandable in isolation

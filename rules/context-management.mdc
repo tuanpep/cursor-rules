@@ -1,0 +1,15 @@
+---
+description: Manage context window efficiency; prevent context rot and log bloat
+alwaysApply: true
+---
+
+# Context Management — keep context clean
+
+Every token loaded into the context window costs time, money, and reduces the agent's reasoning capability (Context Rot).
+
+## Practices
+
+1. **Targeted reads** — Use targeted grep searches and view specific line ranges of files. Avoid reading large, unrelated files in their entirety.
+2. **Context offloading** — If a tool generates a huge output (e.g. massive compiler log, database table dump), redirect it to a temp file and read only the summary. Do not let it flood the chat history.
+3. **Progressive disclosure** — Load only what is needed for the current step. Do not dump the entire repository map or list of rules into every step unless requested.
+4. **Clean up** — Keep conversation threads focused on a single task (Thread-per-Task). If starting a new unrelated task, start a fresh session to wipe out accumulated context.

@@ -1,0 +1,35 @@
+---
+description: Handle errors robustly; fail fast and loud; avoid silent failures
+alwaysApply: true
+---
+
+# Error Handling — fail fast and loud
+
+Do not write code that fails silently or hides errors. Silent failures are extremely hard to debug for both humans and agents.
+
+## Practices
+
+1. **No empty catch blocks** — Every catch block must handle, wrap, or rethrow the error.
+2. **Fail fast** — Validate arguments, configurations, and state early (e.g. on startup or at boundaries) before processing logic begins.
+3. **Explicit error types** — Create domain-specific error classes instead of throwing generic strings or untyped errors.
+4. **Contextual logging** — Log errors with relevant context (inputs, trace ID, user context) but ensure no secrets/PII are logged.
+
+```pseudocode
+// ❌ Silent failure (swallowing errors)
+try {
+  return parseJson(data);
+} catch (Error) {
+  return defaultObject;
+}
+
+// ✅ Explicit error and fail-fast validation
+if (data == null or data == "") {
+  throw new ValidationError("Input data cannot be empty");
+}
+try {
+  return parseJson(data);
+} catch (ParseException e) {
+  log.error("Failed to parse configuration", e);
+  throw new ConfigurationError("Failed to parse JSON configuration", e);
+}
+```

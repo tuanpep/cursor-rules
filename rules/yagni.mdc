@@ -1,7 +1,6 @@
 ---
 description: Build only what was asked; no speculative features
-globs: "**/*.{ts,tsx,js,jsx}"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # YAGNI — build only what was asked
